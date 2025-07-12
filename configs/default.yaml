@@ -1,0 +1,55 @@
+# 训练配置
+training:
+  epoch: 80
+  lr: 0.0001
+  batchsize: 72
+  trainsize: 256
+  clip: 0.5
+  decay_rate: 0.1
+  decay_epoch: 50
+  numworkers: 4
+  save_ck: true
+
+# 模型配置
+model:
+  name: "DualFastnet"
+  path: "models.res50_net_inject_betav1_234"
+
+# 数据集配置
+dataset:
+  train:
+    image_root: '/data/home/zakeyao/code/dataset/SOD/TrainingSet/images/'
+    gt_root: '/data/home/zakeyao/code/dataset/SOD/TrainingSet/gts/'
+    depth_root: '/data/home/zakeyao/code/dataset/SOD/TrainingSet/depths/'
+  
+  test:
+    datasets:
+      - name: 'DUT-RGBD'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/DUT-RGBD/test_data/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/DUT-RGBD/test_data/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/DUT-RGBD/test_data/depths/'
+      - name: 'NLPR'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/NLPR/test_data/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/NLPR/test_data/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/NLPR/test_data/depths/'
+      - name: 'NJU2K'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/NJU2K/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/NJU2K/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/NJU2K/depths/'
+      - name: 'STEREO1000'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/STEREO1000/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/STEREO1000/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/STEREO1000/depths/'
+      - name: 'RGBD135'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/RGBD135/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/RGBD135/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/RGBD135/depths/'
+      - name: 'LFSD'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/LFSD/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/LFSD/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/LFSD/depths/'
+
+# 保存配置
+save:
+  path: './save/DIF-res50-aba-3dataset-beta-F3loss-128-234layer'
+  
