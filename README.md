@@ -77,8 +77,24 @@ This project supports the following RGB-D salient object detection datasets:
 - NLPR
 - NJU2K
 - STEREO1000
-- RGBD135
+- STEREO(797)
+- DES(RGBD135)
 - LFSD
+- SIP
+
+#### Saliency Maps
+
+Download our pre-computed saliency maps:
+- **File**: Saliency_Maps.zip
+- **Link**: https://pan.baidu.com/s/1JJ9XtxO5fIZNE_lBVptNmQ 
+- **Extraction Code**: 5vjp
+
+#### Test Set Release
+
+You can download the test set used in our experiments:
+- **File**: TestSet.zip
+- **Link**: https://pan.baidu.com/s/1UQ66rs0GiT2i7uNH8XP7qg
+- **Extraction Code**: 5h3r
 
 ### Pre-trained Models and Results
 
@@ -90,13 +106,6 @@ Download our best checkpoint:
 - **File**: best_epoch.pth
 - **Link**: https://pan.baidu.com/s/1tRnhJZNTzLVFzXcbhM8Dyw 
 - **Extraction Code**: syh5
-
-#### Saliency Maps
-
-Download our pre-computed saliency maps:
-- **File**: Saliency_Maps.zip
-- **Link**: https://pan.baidu.com/s/1JJ9XtxO5fIZNE_lBVptNmQ 
-- **Extraction Code**: 5vjp
 
 ### Requirements
 
@@ -213,8 +222,24 @@ python evaluate_saliency.py --pred-dir ./results/dataset_name
 - NLPR
 - NJU2K
 - STEREO1000
-- RGBD135
+- STEREO(797)
+- DES(RGBD135)
 - LFSD
+- SIP
+
+#### 显著图
+
+下载我们预先计算的显著图：
+- **文件**：Saliency_Maps.zip
+- **链接**：https://pan.baidu.com/s/1JJ9XtxO5fIZNE_lBVptNmQ 
+- **提取码**：5vjp
+
+#### 测试集公布
+
+您可以下载我们实验所用的测试集：
+- **文件**：TestSet.zip
+- **链接**：https://pan.baidu.com/s/1UQ66rs0GiT2i7uNH8XP7qg
+- **提取码**：5h3r
 
 ### 预训练模型与结果
 
@@ -227,12 +252,6 @@ python evaluate_saliency.py --pred-dir ./results/dataset_name
 - **链接**：https://pan.baidu.com/s/1tRnhJZNTzLVFzXcbhM8Dyw 
 - **提取码**：syh5
 
-#### 显著图
-
-下载我们预先计算的显著图：
-- **文件**：Saliency_Maps.zip
-- **链接**：https://pan.baidu.com/s/1JJ9XtxO5fIZNE_lBVptNmQ 
-- **提取码**：5vjp
 
 ### 环境要求
 
