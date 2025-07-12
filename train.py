@@ -102,14 +102,29 @@ def main():
         num_workers=config['training']['numworkers']
     )
     
-    test_loader, test_samples = get_test_loader(
-        config['dataset']['test']['image_root'],
-        config['dataset']['test']['gt_root'],
-        config['dataset']['test']['depth_root'],
-        batchsize=1,
-        trainsize=config['training']['trainsize'],
-        num_workers=config['training']['numworkers']
-    )
+    # 使用第一个测试数据集进行训练过程中的验证
+    if 'datasets' in config['dataset']['test']:
+        # 新的配置结构：多个测试数据集
+        first_dataset = config['dataset']['test']['datasets'][0]
+        test_loader, test_samples = get_test_loader(
+            first_dataset['image_root'],
+            first_dataset['gt_root'],
+            first_dataset['depth_root'],
+            batchsize=1,
+            trainsize=config['training']['trainsize'],
+            num_workers=config['training']['numworkers']
+        )
+        print(f"使用数据集 '{first_dataset['name']}' 进行训练过程中的验证")
+    else:
+        # 旧的配置结构：单个测试数据集
+        test_loader, test_samples = get_test_loader(
+            config['dataset']['test']['image_root'],
+            config['dataset']['test']['gt_root'],
+            config['dataset']['test']['depth_root'],
+            batchsize=1,
+            trainsize=config['training']['trainsize'],
+            num_workers=config['training']['numworkers']
+        )
     
     print("CUDA设备:", torch.cuda.current_device())
     

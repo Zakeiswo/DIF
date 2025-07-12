@@ -48,6 +48,19 @@ dataset:
         image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/LFSD/images/'
         gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/LFSD/gts/'
         depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/LFSD/depths/'
+      - name: 'SIP'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/SIP/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/SIP/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/SIP/depths/'
+      - name: 'SSD'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/SSD/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/SSD/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/SSD/depths/'
+      - name: 'STEREO'
+        image_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/STEREO/images/'
+        gt_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/STEREO/gts/'
+        depth_root: '/data/home/zakeyao/code/dataset/SOD/TesetSet/STEREO/depths/'
+        
 
 # 保存配置
 save:

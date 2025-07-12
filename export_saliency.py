@@ -130,22 +130,30 @@ def main():
             export_saliency_maps(model, test_loader, output_dataset_dir)
             print(f"显著图已保存到: {output_dataset_dir}")
     
-    # 如果有多个数据集且进行了评估，计算平均结果
+    # 如果有多个数据集且进行了评估，以表格形式打印所有结果
     if args.evaluate and len(all_results) > 1:
         total_samples = sum(r['samples'] for r in all_results)
-        avg_mmf = sum(r['mmf'] * r['samples'] for r in all_results) / total_samples
-        avg_mae = sum(r['mae'] * r['samples'] for r in all_results) / total_samples
-        avg_sm = sum(r['sm'] * r['samples'] for r in all_results) / total_samples
-        avg_em = sum(r['em'] * r['samples'] for r in all_results) / total_samples
-        avg_wfm = sum(r['wfm'] * r['samples'] for r in all_results) / total_samples
         
-        print("\n所有数据集平均结果:")
-        print(f"平均 F-measure: {avg_mmf:.4f}")
-        print(f"平均 MAE: {avg_mae:.4f}")
-        print(f"平均 S-measure: {avg_sm:.4f}")
-        print(f"平均 E-measure: {avg_em:.4f}")
-        print(f"平均 WFM: {avg_wfm:.4f}")
-        print(f"总样本数: {total_samples}")
+        # 打印表格头
+        print("\n" + "=" * 80)
+        print("{:<15} {:>10} {:>10} {:>10} {:>10} {:>10} {:>10}".format(
+            "数据集", "F-measure", "MAE", "S-measure", "E-measure", "WFM", "样本数"))
+        print("-" * 80)
+        
+        # 打印每个数据集的结果
+        for result in all_results:
+            print("{:<15} {:>10.4f} {:>10.4f} {:>10.4f} {:>10.4f} {:>10.4f} {:>10}".format(
+                result['dataset'],
+                result['mmf'],
+                result['mae'],
+                result['sm'],
+                result['em'],
+                result['wfm'],
+                result['samples']
+            ))
+        
+        print("=" * 80)
+        print(f"\n总样本数: {total_samples}")
 
 def export_saliency_maps(model, test_loader, output_dir):
     """

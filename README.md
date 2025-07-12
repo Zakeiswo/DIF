@@ -80,6 +80,24 @@ This project supports the following RGB-D salient object detection datasets:
 - RGBD135
 - LFSD
 
+### Pre-trained Models and Results
+
+Our model was trained on the combined dataset of DUT-RGBD, NJU2K, and NLPR.
+
+#### Pre-trained Model
+
+Download our best checkpoint:
+- **File**: best_epoch.pth
+- **Link**: https://pan.baidu.com/s/1tRnhJZNTzLVFzXcbhM8Dyw 
+- **Extraction Code**: syh5
+
+#### Saliency Maps
+
+Download our pre-computed saliency maps:
+- **File**: Saliency_Maps.zip
+- **Link**: https://pan.baidu.com/s/1JJ9XtxO5fIZNE_lBVptNmQ 
+- **Extraction Code**: 5vjp
+
 ### Requirements
 
 - Python 3.7+
@@ -197,6 +215,24 @@ python evaluate_saliency.py --pred-dir ./results/dataset_name
 - STEREO1000
 - RGBD135
 - LFSD
+
+### 预训练模型与结果
+
+我们的模型在 DUT-RGBD、NJU2K 和 NLPR 的组合数据集上进行训练。
+
+#### 预训练模型
+
+下载我们的最佳检查点：
+- **文件**：best_epoch.pth
+- **链接**：https://pan.baidu.com/s/1tRnhJZNTzLVFzXcbhM8Dyw 
+- **提取码**：syh5
+
+#### 显著图
+
+下载我们预先计算的显著图：
+- **文件**：Saliency_Maps.zip
+- **链接**：https://pan.baidu.com/s/1JJ9XtxO5fIZNE_lBVptNmQ 
+- **提取码**：5vjp
 
 ### 环境要求
 
